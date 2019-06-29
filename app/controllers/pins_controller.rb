@@ -12,29 +12,37 @@ class PinsController < ApplicationController
     @pin = Pin.new(pin_params)
     @pin.save
 
-    redirect_to pins_path(@pin)
+    redirect_to pin_path(@pin)
   end
 
   def show
-    @pin = Pin.find_by(id: params[:id])
+    set_pin
   end
 
   def edit
-    @pin = Pin.find_by(id: params[:id])
+    set_pin
   end
 
   def update
-    @pin = Pin.find_by(id: params[:id])
+    set_pin
     @pin.update(pin_params)
     redirect_to pin_path(@pin)
   end
 
   def delete
+    set_pin
     @pin.destroy
-    render '/'
+    redirect_to pins_path
   end
 
   private
+
+  def set_pin
+    @pin = Pin.find_by(id: params[:id])
+    if !@pin
+      redirect_to pins_path
+    end
+  end
 
   def pin_params
     params.require(:pin).permit(:disney_id, :image, :title, :description)
