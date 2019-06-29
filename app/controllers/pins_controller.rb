@@ -10,6 +10,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
+    binding.pry
     @pin.save
 
     redirect_to pin_path(@pin)
