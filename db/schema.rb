@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_202146) do
     t.integer "release_year"
     t.string "name"
     t.integer "number_in_set"
+    t.string "park"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
