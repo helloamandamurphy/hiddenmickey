@@ -1,5 +1,5 @@
 <%= form_for @pin do |f| %>
-  <%= f.label :disney_num %>
+  <%= f.label :disney_num, "Disney Pin ID" %>
   <%= f.text_field :disney_num %>
 
   <%= f.label :image %>
@@ -10,6 +10,9 @@
 
   <%= f.label :description %>
   <%= f.text_area :description %>
+<br></br>
+  <%= f.label :series_id, "Select a Series" %>
+  <%= f.collection_select :series_id, Series.all, :id, :name %>
 
   <%= f.submit %>
 <% end %>
