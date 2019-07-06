@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2019_07_05_202146) do
   enable_extension "plpgsql"
 
   create_table "pins", force: :cascade do |t|
-    t.integer "disney_num"
+    t.integer "number"
     t.string "image"
-    t.string "title"
-    t.text "description"
+    t.string "status"
+    t.text "subject"
     t.integer "user_id"
     t.integer "series_id"
     t.datetime "created_at", null: false

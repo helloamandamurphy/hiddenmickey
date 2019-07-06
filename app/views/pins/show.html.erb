@@ -1,1 +1,5 @@
-<h1>Pin Individual Page</h1>
+<h2><%= @pin.subject %></h2>
+<img src="<%= @pin.image %>" alt="<%= @pin.subject%> Hidden Mickey Pin">
+<h3><%= link_to @pin.series.name, series_path(@pin.series) %></h3>
+<p>Pin <%= @pin.number %> of <%= @pin.series.number_in_set %></p>
+<h4>Released in <%= @pin.series.release_year %> at <%= @pin.series.park %></h4>

@@ -58,6 +58,6 @@ class PinsController < ApplicationController
   end
 
   def pin_params
-    params.require(:pin).permit(:disney_num, :image, :title, :description, :series_id)
+    params.require(:pin).permit(:number, :image, :status, :subject, :series_id)
   end
 end
