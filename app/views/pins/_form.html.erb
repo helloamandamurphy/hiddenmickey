@@ -1,4 +1,5 @@
 <%= form_for @pin do |f| %>
+<%= render partial: 'layouts/errors', locals: { object: @pin } %>
   <%= f.label :number, "Pin Number" %>
   <p>Example: If the back of the pin says 3/5, please enter 3.</p>
   <%= f.text_field :number %>

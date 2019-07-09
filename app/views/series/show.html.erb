@@ -1,10 +1,10 @@
 <h2><%= @series.release_year %> <%= @series.park %>'s "<%= @series.name %>" Series</h2>
 
+<div>
 <% @series.pins.uniq.each do |pin| %>
-  <div>
     <img src="<%= pin.image %>" alt="<%= pin.subject%> Hidden Mickey Pin">
     <p><%= pin.number %> of <%= @series.number_in_set %></p>
     <h3><%=link_to pin.subject, pin_path(pin)%></h3>
     <br>
-  </div>
 <% end %>
+</div>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :series
 
   resources :series do
-    resources :pins, only: [:new, :create, :index]
+    resources :pins, only: [:new, :create]
   end
 
   root 'sessions#home'

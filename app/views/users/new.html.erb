@@ -1,4 +1,7 @@
-<h1>Welcome New User!</h1>
+<h2>Welcome, New Pin Trader!</h2>
+
+<%= render partial: 'layouts/errors', locals: { object: @user } %>
+
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
