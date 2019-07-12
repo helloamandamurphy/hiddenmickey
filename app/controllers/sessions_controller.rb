@@ -19,6 +19,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def omniauth
+    byebug
+  end
+
   #logs out user
   def destroy
     session.delete :user_id
