@@ -1,10 +1,16 @@
-<h4>Well, hiya, <%= @user.name %>.</h4>
-<h2>Welcome to Your Pin Binder</h2>
+<% if @user == current_user %>
+  <h4>Well, hiya, <%= @user.name %>.</h4>
+  <h2>Welcome to Your Pin Binder</h2>
+<% else %>
+  <h4>Currently viewing</h4>
+  <h2><%= @user.name %>'s Pin Binder</h2>
+<% end %>
+
 <% @user.series.uniq.each do |series| %>
-<h3><%= series.name %></h3>
+<h3><%= series.release_year %> - <%= series.name %> - <%= series.park %> </h3>
 <ul>
   <% series.pins.each do |pin| %>
-    <li><%= pin.number %> of <%= series.number_in_set %>, <%= pin.subject %> (<%= pin.status %>)</li>
+    <li><%= pin.number %> of <%= series.number_in_set %>, <%= link_to pin.subject, pin_path(pin) %> (<%= pin.status %>)</li>
   <% end %>
 </ul>
 <% end %>
