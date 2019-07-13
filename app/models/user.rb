@@ -5,4 +5,12 @@ class User < ApplicationRecord
 
   validates :name, :email, :location, presence: true
   validates :email, uniqueness: true
+
+  def self.create_with_google(auth)
+    self.find_or_create_by(email: auth[:info][:email]) do |u|
+      u.name = auth[:info][:name]
+      u.location = "Main Street USA"
+      u.password = SecureRandom.hex
+    end
+  end
 end

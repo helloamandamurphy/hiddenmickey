@@ -30,7 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-google-oauth2', '~> 0.7.0'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.4'
-gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
+
+#Recommended by GitHub for Omniauth Insecurity, but prevented Google from connecting
+#gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
