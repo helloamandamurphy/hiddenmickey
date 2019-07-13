@@ -1,6 +1,6 @@
 <h2>View All Pins</h2>
 <ul>
-<% @pins.each do |pin| %>
-  <li><%= pin.subject %></li>
+<% @pins.uniq.each do |pin| %>
+  <li><%= link_to pin.subject, pin_path(pin) %></li>
 <% end %>
 </ul>

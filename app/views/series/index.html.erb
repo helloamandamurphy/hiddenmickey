@@ -1,0 +1,6 @@
+<h2>View All Series</h2>
+<ul>
+<% @series.each do |s| %>
+  <li><%= s.release_year %> - <%= link_to s.name, series_path(s) %> - <%= s.park %></li>
+<% end %>
+</ul>

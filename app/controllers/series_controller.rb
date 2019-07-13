@@ -1,6 +1,6 @@
 class SeriesController < ApplicationController
   def index
-    @series = Series.all
+    @series = Series.order_by_year
   end
 
   def new
