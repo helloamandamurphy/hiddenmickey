@@ -41,12 +41,12 @@ DATA = {
 
   :pin_keys => ["number", "image", "status", "subject", "series_id", "user_id"],
   :pins => [
-    [ 1, "https://i.imgur.com/X13PAgU.png", "Not for Sale", "Cinderella's Castle", 15, 1],
-    [ 2, "https://i.imgur.com/YxQ2W14.png", "Not for Sale", "Thunder Mountain", 15, 1],
-    [ 3, "https://i.imgur.com/EkkCV2A.png", "Not for Sale", "It's a Small World", 15, 1],
-    [ 4, "https://i.imgur.com/9yn3bFR.png", "Not for Sale", "Epcot Monorail", 15, 1],
-    [ 5, "https://i.imgur.com/wLOJje7.png", "Not for Sale", "Haunted Mansion", 15, 1],
-    [ 6, "https://i.imgur.com/xN3tGBc.png", "Not for Sale", "Nautilus", 15, 1]
+    [ 1, "https://i.imgur.com/X13PAgU.png", "For Keeps", "Cinderella's Castle", 15, 1],
+    [ 2, "https://i.imgur.com/YxQ2W14.png", "For Keeps", "Thunder Mountain", 15, 1],
+    [ 3, "https://i.imgur.com/EkkCV2A.png", "For Keeps", "It's a Small World", 15, 1],
+    [ 4, "https://i.imgur.com/9yn3bFR.png", "For Keeps", "Epcot Monorail", 15, 1],
+    [ 5, "https://i.imgur.com/wLOJje7.png", "For Keeps", "Haunted Mansion", 15, 1],
+    [ 6, "https://i.imgur.com/xN3tGBc.png", "For Keeps", "Nautilus", 15, 1]
   ],
 }
 

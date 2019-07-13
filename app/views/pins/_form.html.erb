@@ -1,20 +1,25 @@
 <%= form_for @pin do |f| %>
 <%= render partial: 'layouts/errors', locals: { object: @pin } %>
+  <%= f.label :series_id, "Select a Series" %>
+  <%= f.collection_select :series_id, Series.all, :id, :name %>
+  <br></br>
+
   <%= f.label :number, "Pin Number" %>
-  <p>Example: If the back of the pin says 3/5, please enter 3.</p>
   <%= f.text_field :number %>
+  <p>Example: If the back of the pin says 3/5, please enter 3.</p>
+  <br></br>
 
   <%= f.label :image %>
   <%= f.text_field :image %>
+  <br></br>
 
   <%= f.label :status, "Trading Status" %>
-  <%= f.text_field :status %>
+  <%= f.select :status, [ "For Keeps", "For Sale", "For Trade" ] %>
+  <br></br>
 
   <%= f.label :subject %>
   <%= f.text_area :subject %>
-<br></br>
-  <%= f.label :series_id, "Select a Series" %>
-  <%= f.collection_select :series_id, Series.all, :id, :name %>
+  <br></br>
 
   <%= f.submit %>
 <% end %>

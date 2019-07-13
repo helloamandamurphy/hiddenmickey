@@ -1,6 +1,6 @@
 # Specifications for the Rails Assessment
 
-Models
+MODELS
 User Model
 has_many :pins
 has_many :series, through: :pins
@@ -13,10 +13,7 @@ Series Model
 has_many :pins
 has_many :users, through: :pins
 
-
 Add number of pin / series total
-
-
 
 Specs:
 - [x] Using Ruby on Rails for the project
@@ -30,10 +27,10 @@ Specs:
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
 - [x] Include logout (how e.g. Devise)
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [x] The application is pretty DRY

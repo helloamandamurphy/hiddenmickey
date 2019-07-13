@@ -1,3 +1,10 @@
-<h1>Well, hiya, <%= @user.name %>, ID: <%= @user.id %></h1>
-
-<%= link_to 'Add new pin', '/pins/new' %>
+<h4>Well, hiya, <%= @user.name %>.</h4>
+<h2>Welcome to Your Pin Binder</h2>
+<% @user.series.uniq.each do |series| %>
+<h3><%= series.name %></h3>
+<ul>
+  <% series.pins.each do |pin| %>
+    <li><%= pin.number %> of <%= series.number_in_set %>, <%= pin.subject %> (<%= pin.status %>)</li>
+  <% end %>
+</ul>
+<% end %>

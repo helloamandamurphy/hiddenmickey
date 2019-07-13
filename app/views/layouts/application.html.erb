@@ -13,6 +13,8 @@
     <h1>Hidden Mickey Pin Trading</h1>
     <nav>
       <% if logged_in? %>
+        <%= link_to 'Add New Pin', '/pins/new' %>
+        <%= link_to 'View my Collection', user_path(current_user) %>
         <%= link_to 'Log Out', logout_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign Up', signup_path %>
