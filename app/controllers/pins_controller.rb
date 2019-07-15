@@ -11,7 +11,8 @@ class PinsController < ApplicationController
       @pin = series.pins.build
     else
       @pin = Pin.new
-      @pin.build_series
+      #@pin = series.pins.build because a series has_many pins; if you tried series.pins and there was no series, it would return nil.
+      @pin.build_series #because a pin belongs_to a series
     end
   end
 
@@ -58,6 +59,6 @@ class PinsController < ApplicationController
   end
 
   def pin_params
-    params.require(:pin).permit(:number, :image, :status, :subject, :series_id)
+    params.require(:pin).permit(:number, :image, :status, :subject, :series_id, series_attributes: [:release_year, :park, :name, :number_in_set])
   end
 end

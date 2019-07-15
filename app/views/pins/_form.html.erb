@@ -1,13 +1,13 @@
 <%= form_for @pin do |f| %>
 <%= render partial: 'layouts/errors', locals: { object: @pin } %>
-  <%= f.label :series_id, "Select a Series" %>
-  <%= f.collection_select :series_id, Series.all, :id, :name %>
+
+  <%= f.label :subject %>
+  <%= f.text_area :subject %>
   <br></br>
 
   <%= f.label :number, "Pin Number" %>
   <%= f.text_field :number %>
   <p>Example: If the back of the pin says 3/5, please enter 3.</p>
-  <br></br>
 
   <%= f.label :image %>
   <%= f.text_field :image %>
@@ -17,9 +17,29 @@
   <%= f.select :status, [ "For Keeps", "For Sale", "For Trade" ] %>
   <br></br>
 
-  <%= f.label :subject %>
-  <%= f.text_area :subject %>
+  <%= f.label :series_id, "Select a Series" %>
+  <%= f.collection_select :series_id, Series.all, :id, :name, prompt: true %>
   <br></br>
 
+  <% if !params[:series_id] %>
+    <h4>Or Create a Series</h4>
+    <%= f.fields_for :series do |s|%>
+        <%= s.label :release_year, "Release Year" %>
+        <%= s.text_field :release_year %>
+        <br></br>
+
+        <%= s.label :park %>
+        <%= s.select :park, [ "Disneyland", "Walt Disney World", "Shared" ] %>
+        <br></br>
+
+        <%= s.label :name, "Series Name" %>
+        <%= s.text_field :name %>
+        <br></br>
+
+        <%= s.label :number_in_set, "Number in Set"%>
+        <%= s.text_field :number_in_set %>
+        <p>Example: If the back of the pin says 3/5, please enter 5.</p>
+    <% end %>
+  <% end %>
   <%= f.submit %>
 <% end %>
