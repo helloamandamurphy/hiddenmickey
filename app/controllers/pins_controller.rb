@@ -1,4 +1,5 @@
 class PinsController < ApplicationController
+  before_action :check_for_logged_in, except: [:home]
 
   def index
     @pins = Pin.by_subject

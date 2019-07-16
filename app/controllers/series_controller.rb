@@ -1,4 +1,6 @@
 class SeriesController < ApplicationController
+  before_action :check_for_logged_in, except: [:home]
+
   def index
     @series = Series.order_by_year.order_by_park
   end
@@ -39,7 +41,7 @@ class SeriesController < ApplicationController
   # end
 
   private
-  
+
   def set_series
     @series = Series.find_by(id: params[:id])
     if !@series

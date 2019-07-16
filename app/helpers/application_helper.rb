@@ -6,4 +6,8 @@ module ApplicationHelper
   def logged_in?
     session[:user_id].present?
   end
+
+  def check_for_logged_in
+    redirect_to '/' if !logged_in?
+  end
 end
