@@ -4,7 +4,7 @@ class Pin < ApplicationRecord
   validates :number, :image, :status, :subject, presence: true
   validates :series_id, presence: true
   validates_associated :series
-
+  enum status: { "For Keeps": 0, "For Sale": 1, "For Trade": 2 }
   #accepts_nested_attributes_for :series
 
   #better to write custom method here to prevent duplicates

@@ -4,7 +4,7 @@ class CreateSeries < ActiveRecord::Migration[5.2]
       t.integer :release_year
       t.string :name
       t.integer :number_in_set
-      t.string :park
+      t.integer :park
 
       t.timestamps
     end

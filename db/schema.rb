@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_202146) do
   create_table "pins", force: :cascade do |t|
     t.integer "number"
     t.string "image"
-    t.string "status"
+    t.integer "status"
     t.text "subject"
     t.integer "user_id"
     t.integer "series_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_202146) do
     t.integer "release_year"
     t.string "name"
     t.integer "number_in_set"
-    t.string "park"
+    t.integer "park"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

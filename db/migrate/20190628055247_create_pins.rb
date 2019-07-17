@@ -3,7 +3,7 @@ class CreatePins < ActiveRecord::Migration[5.2]
     create_table :pins do |t|
       t.integer :number
       t.string :image
-      t.string :status
+      t.integer :status
       t.text :subject
       t.integer :user_id
       t.integer :series_id
