@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def leaderboard
+    @users = User.top_ten #change all to scope method
+  end
+
+
   #loads sign up form
   def new
     @user = User.new

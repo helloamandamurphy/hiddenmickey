@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :name, :email, :location, presence: true
   validates :email, uniqueness: true
 
+  scope :top_ten, -> {left_joins(:pins).group(:id).order('COUNT(pins.id) DESC').limit(10)}
+
   def self.create_with_google(auth)
     self.find_or_create_by(email: auth[:info][:email]) do |u|
       u.name = auth[:info][:name]

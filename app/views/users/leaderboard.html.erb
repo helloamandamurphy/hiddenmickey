@@ -1,0 +1,6 @@
+<h2>Leaderboard</h2>
+<ol>
+<% @users.each do |u| %>
+  <li><%= u.name %>, owns <%= u.pins.count %></li>
+<% end %>
+</ol>

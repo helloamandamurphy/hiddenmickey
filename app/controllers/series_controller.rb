@@ -34,7 +34,7 @@ class SeriesController < ApplicationController
   #   redirect_to series_path(@series)
   # end
   #
-  # def delete
+  # def destroy
   #   set_series
   #   @series.destroy
   #   redirect_to series_path

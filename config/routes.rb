@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users/leaderboard' => 'users#leaderboard'
   resources :users, only: [:new, :create, :show]
   get '/pins/for_trade' => 'pins#for_trade'
   resources :pins
