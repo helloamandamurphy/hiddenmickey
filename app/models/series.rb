@@ -10,4 +10,8 @@ class Series < ApplicationRecord
 
   scope :disney_world_pins, -> {where(park: "Walt Disney World")}
   scope :disneyland_pins, -> {where(park: "Disneyland")}
+
+  def show_with_attributes
+    "#{release_year} - #{name} - #{park}"
+  end
 end

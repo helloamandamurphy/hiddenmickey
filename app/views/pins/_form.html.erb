@@ -18,7 +18,7 @@
   <br></br>
 
   <%= f.label :series_id, "Select a Series" %>
-  <%= f.collection_select :series_id, Series.all, :id, :name, prompt: true %>
+  <%= f.collection_select :series_id, Series.order_by_year.order_by_park, :id, :show_with_attributes, prompt: true %>
   <br></br>
 
   <% if !params[:series_id] %>
