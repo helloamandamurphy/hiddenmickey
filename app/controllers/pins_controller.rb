@@ -1,8 +1,13 @@
 class PinsController < ApplicationController
-  before_action :check_for_logged_in, except: [:home]
+  before_action :check_for_logged_in
+  before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
     @pins = Pin.by_subject
+  end
+
+  def for_trade
+    @pins = Pin.for_trade
   end
 
   def new
@@ -28,15 +33,15 @@ class PinsController < ApplicationController
   end
 
   def show
-    set_pin
   end
 
   def edit
-    set_pin
+    if !@pin.user == current_user
+      redirect_to '/'
+    end
   end
 
   def update
-    set_pin
     if @pin.update(pin_params)
       redirect_to pin_path(@pin)
     else
@@ -44,8 +49,7 @@ class PinsController < ApplicationController
     end
   end
 
-  def delete
-    set_pin
+  def destroy
     @pin.destroy
     redirect_to pins_path
   end

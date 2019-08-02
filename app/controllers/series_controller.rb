@@ -1,5 +1,5 @@
 class SeriesController < ApplicationController
-  before_action :check_for_logged_in, except: [:home]
+  before_action :check_for_logged_in
 
   def index
     @series = Series.order_by_year.order_by_park

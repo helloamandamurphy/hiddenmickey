@@ -1,0 +1,6 @@
+<h2>View All Pins Available for Trade</h2>
+<ul>
+<% @pins.each do |pin| %>
+  <li><%= link_to pin.subject, pin_path(pin) %></li>
+<% end %>
+</ul>
